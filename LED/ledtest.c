@@ -2,8 +2,9 @@
  * Copyright Technologic Systems (c)2017
  *
  * LED manipulation sample code, will blink an LED for 10 cycles at 0.5 Hz
- * Rquires no arguments.
- * ./ledtest
+ * Rquires a single argument of an LED name (names can be found in 
+ *   /sys/class/leds/)
+ * ./ledtest yellow-led
  *
  * Has no output.
  * Returns 0 on success, or a 1 if there is an issue opening the LED file
@@ -18,15 +19,24 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
         int ledfd;
         int i;
         char buf[2] = {'0', '1'};
+	char filepath[255];
 
-        ledfd = open("/sys/class/leds/yellow-led/brightness", O_RDWR);
+	if (argc != 2) {
+		fprintf(stderr,"Usage: %s [LED name]\n", argv[0]);
+		return 1;
+	}
+
+	snprintf(filepath, 255, "/sys/class/leds/%s/brightness", argv[1]);
+
+        ledfd = open(filepath, O_RDWR);
         if (ledfd < 0) {
-                fprintf(stderr, "Unable to open LED file!\n");
+                fprintf(stderr, "Unable to open LED brightness file %s!\n",
+		  filepath);
                 return 1;
         }
 
