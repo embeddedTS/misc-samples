@@ -1,6 +1,6 @@
-// Technologic Systems Inc. CAN demonstration 2.
+// embeddedTS Inc. CAN demonstration 2.
 //  Based heavily on the TS Wiki SocketCAN demo.
-// Copyright 2017, Technologic Systems, Inc.
+// Copyright 2017-2022 Technologic Systems, Inc. dba embeddedTS, Inc.
 //
 // This application either outputs a sequence of numbers to SocketCAN interface
 //  can0, or it reads a sequence of numbers from can0 and identifies when a

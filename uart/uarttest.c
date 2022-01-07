@@ -1,5 +1,5 @@
 /*
- * Copyright Technologic Systems (c)2017
+ * Copyright (c) 2017-2022 Technologic Systems, Inc. dba embeddedTS
  *
  * UART loopback test code
  * Requires two arguments, device node to test and number of test loops

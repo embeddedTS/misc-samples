@@ -1,5 +1,5 @@
 /*
- * Copyright Technologic Systems (c)2017
+ * Copyright (c) 2017-2022 Technologic Systems, Inc. dba embeddedTS
  *
  * LED manipulation sample code, will blink an LED for 10 cycles at 0.5 Hz
  * Rquires a single argument of an LED name (names can be found in 
